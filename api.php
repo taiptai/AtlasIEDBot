@@ -8,23 +8,30 @@
   
         $ch = curl_init(); 
 
-        // set url สำหรับดึงข้อมูล 
+        // set url 
         curl_setopt($ch, CURLOPT_URL, "http://data.tmd.go.th/api/WeatherToday/V1/?type=json"); 
 
         //return the transfer as a string 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 
-        // ตัวแปร $output เก็บข้อมูลทั้งหมดที่ดึงมา 
+        // $output contains the output string 
         $output = curl_exec($ch); 
         
      
    
 
-        // ปิดการเชื่อต่อ
+        // close curl resource to free up system resources 
         curl_close($ch);    
-        // output ออกไปครับ
+        
         echo $output;
         
        
+        //$array = json_decode($output,TRUE);
+        
+         //print_r($array);
+    
+                 
+          
+
 
 ?>
