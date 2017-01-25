@@ -8,13 +8,6 @@
         $output = curl_exec($ch); 
         // ปิดการเชื่อต่อ
         curl_close($ch);    
-
-
-     $send = dataget['Stations']['6']['Observe']['BarometerTemperature'].Value;
-     echo = "$temp";
-       
-                 
+        echo = $output;         
           
-
-
 ?>
