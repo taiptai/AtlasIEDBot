@@ -10,7 +10,7 @@ curl_close($ch);
 
 $xml = simplexml_load_string($data)
 
-$con = mysql_connect("localhost","root",""); 	//connect to server
+$con = mysql_connect("localhost","root","2455"); 	//connect to server
 mysql_select_db("yecc", $con) or die(mysql_error());  //select database
 
 foreach ($xml -> Station as $row){
