@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if($text == 'On' || 'on' || 'ON'){
+			if($text == 'On'){
 				//microgear
 
 			$messages = [
