@@ -22,6 +22,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			if($text == 'On'){
 				//microgear
+			function pubMqtt($topic,$msg){
+      put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","ON1"); 
+			}
 
 			$messages = [
 				'type' => 'text',
@@ -29,6 +32,9 @@ if (!is_null($events['events'])) {
 			];
 			}else if($text == 'Off'){
 				//microgear
+				function pubMqtt($topic,$msg){
+      put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","OFF1"); 
+			}
 				
 				$messages = [
 				'type' => 'text',
