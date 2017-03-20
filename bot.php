@@ -22,36 +22,14 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			if($text == 'On'){
 				//microgear
-<script>
-              var url =
-      
-                  'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
-      
-              var xmlHttp = new XMLHttpRequest();
-      
-                  xmlHttp.open('PUT',url,true);
-      
-                  xmlHttp.send('ON1');
-      
-</script>
+
 			$messages = [
 				'type' => 'text',
 				'text' => '`On` is done'
 			];
 			}else if($text == 'Off'){
 				//microgear
-<script>
-              var url =
-      
-                  'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
-      
-              var xmlHttp = new XMLHttpRequest();
-      
-                  xmlHttp.open('PUT',url,true);
-      
-                  xmlHttp.send('OFF1');
-      
-</script>
+				
 				$messages = [
 				'type' => 'text',
 				'text' => '`Off` is done'
