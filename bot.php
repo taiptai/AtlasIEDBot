@@ -1,4 +1,7 @@
 <?php
+
+
+
 $access_token = '1eyYaLo2Ay3mZwH3Dt+uu9Q16MAxXYpIJ3gwVkFwhWLHtnRCVUU4pBtWfIe9TDcnKDdj8EHY9kpRFSyjVym6Wv3oujXz07ppL76ODiXG+zaHv+9tOSq7LB/VNg8cXzV6D44Z2TttTyN0lrEnLI3oNAdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -17,20 +20,46 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if($text == 'who'){
+			if($text == 'On'){
+				//microgear
+<script>
+              var url =
+      
+                  'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
+      
+              var xmlHttp = new XMLHttpRequest();
+      
+                  xmlHttp.open('PUT',url,true);
+      
+                  xmlHttp.send('ON1');
+      
+</script>
 			$messages = [
 				'type' => 'text',
-				'text' => 'bot'
+				'text' => '`On` is done'
 			];
-			}else if($text == 'status'){
+			}else if($text == 'Off'){
+				//microgear
+<script>
+              var url =
+      
+                  'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
+      
+              var xmlHttp = new XMLHttpRequest();
+      
+                  xmlHttp.open('PUT',url,true);
+      
+                  xmlHttp.send('OFF1');
+      
+</script>
 				$messages = [
 				'type' => 'text',
-				'text' => 'ok'
+				'text' => '`Off` is done'
 			];
 			}else{
 				$messages = [
 				'type' => 'text',
-				'text' => '?'
+				'text' => 'I don`t know.'
 			];
 				}
 					
