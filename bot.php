@@ -1,9 +1,5 @@
 <?php
-
-
-
 $access_token = '1eyYaLo2Ay3mZwH3Dt+uu9Q16MAxXYpIJ3gwVkFwhWLHtnRCVUU4pBtWfIe9TDcnKDdj8EHY9kpRFSyjVym6Wv3oujXz07ppL76ODiXG+zaHv+9tOSq7LB/VNg8cXzV6D44Z2TttTyN0lrEnLI3oNAdB04t89/1O/w1cDnyilFU=';
-
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -18,32 +14,31 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
 			// Build message to reply back
 			if($text == 'On'){
 				//microgear
-      	put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","ON1"); 
-
+      	//put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","ON1"); 
 			$messages = [
 				'type' => 'text',
-				'text' => '`On` is done'
+				'text' => 'ON1'
 			];
 			}else if($text == 'Off'){
 				//microgear
-	put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","OFF1"); 
+	//put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","OFF1"); 
 	
 				$messages = [
 				'type' => 'text',
-				'text' => '`Off` is done'
+				'text' => 'OFF1'
 			];
+			
 			}else{
 				$messages = [
 				'type' => 'text',
 				'text' => 'I don`t know.'
 			];
 				}
-					
-
+			
+			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
@@ -52,7 +47,6 @@ if (!is_null($events['events'])) {
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -61,8 +55,24 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-
 			echo $result . "\r\n";
+			
+			
+			
+			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
+			$tmsg = [
+				'replyToken' => $replyToken,
+				'messages' => [$messages],
+			];
+			$ch = curl_init($url1);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $tmsg);    
+			$response = curl_exec($ch);     
+			curl_close ($ch);     
+			return $response;
 		}
 	}
 }
