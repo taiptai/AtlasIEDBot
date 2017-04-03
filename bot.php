@@ -21,14 +21,14 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => 'Plug1 is on'
 			];
-				$tmsg = 'ON1';
+				$tmsg = "ON1";
 				
 			}else if($text == 'Off'){
 				$messages = [
 				'type' => 'text',
 				'text' => 'Plug1 is off'
 			];
-				$tmsg = 'ON1';
+				$tmsg = "ON1";
 				
 			}else{
 				$messages = [
