@@ -15,44 +15,20 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
+			
 			if($text == 'On'){
-				//microgear
-      	//put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","ON1"); 
 			$messages = [
 				'type' => 'text',
 				'text' => 'Plug1 is on'
 			];
-				
-			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
-			$ch = curl_init($url1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
-			curl_setopt($ch, CURLOPT_POSTFIELDS, "ON1");    
-			$response = curl_exec($ch);     
-			curl_close ($ch);     
-			return $response;
+				$tmsg = 'ON1';
 				
 			}else if($text == 'Off'){
-				//microgear
-	//put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","OFF1"); 
-	
 				$messages = [
 				'type' => 'text',
 				'text' => 'Plug1 is off'
 			];
-			
-			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
-			$ch = curl_init($url1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
-			curl_setopt($ch, CURLOPT_POSTFIELDS, "OFF1");    
-			$response = curl_exec($ch);     
-			curl_close ($ch);     
-			return $response;	
+				$tmsg = 'ON1';
 				
 			}else{
 				$messages = [
@@ -79,6 +55,17 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			echo $result . "\r\n";
+			
+			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
+			$ch = curl_init($url1);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $tmsg);    
+			$response = curl_exec($ch);     
+			curl_close ($ch);     
+			return $response;
 			
 		}
 	}
