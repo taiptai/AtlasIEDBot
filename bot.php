@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
       	//put("https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl","ON1"); 
 			$messages = [
 				'type' => 'text',
-				'text' => 'ON1'
+				'text' => 'Plug1 is on'
 			];
 				
 			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
@@ -40,9 +40,20 @@ if (!is_null($events['events'])) {
 	
 				$messages = [
 				'type' => 'text',
-				'text' => 'OFF1'
+				'text' => 'Plug1 is off'
 			];
 			
+			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
+			$ch = curl_init($url1);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
+			curl_setopt($ch, CURLOPT_POSTFIELDS, "OFF1");    
+			$response = curl_exec($ch);     
+			curl_close ($ch);     
+			return $response;	
+				
 			}else{
 				$messages = [
 				'type' => 'text',
