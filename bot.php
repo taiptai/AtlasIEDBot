@@ -21,14 +21,32 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => 'Plug1 is on'
 			];
-				$tmsg = "ON1";
+			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
+			$ch = curl_init($url1);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
+			curl_setopt($ch, CURLOPT_POSTFIELDS, "ON1");    
+			$response = curl_exec($ch);     
+			curl_close ($ch);
+			
 				
 			}else if($text == 'Off'){
 				$messages = [
 				'type' => 'text',
 				'text' => 'Plug1 is off'
 			];
-				$tmsg = "ON1";
+			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
+			$ch = curl_init($url1);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
+			curl_setopt($ch, CURLOPT_POSTFIELDS, "OFF1");    
+			$response = curl_exec($ch);     
+			curl_close ($ch);
+			
 				
 			}else{
 				$messages = [
@@ -40,15 +58,6 @@ if (!is_null($events['events'])) {
 			
 			// Make a POST Request to Messaging API to reply to sender
 			
-			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
-			$ch = curl_init($url1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $tmsg);    
-			$response = curl_exec($ch);     
-			curl_close ($ch);     
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
