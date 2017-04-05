@@ -32,6 +32,7 @@ if (!is_null($events['events'])) {
 			curl_close ($ch);
 				
 			}
+			
 			else if($text == 'Off'){
 				$messages = [
 				'type' => 'text',
@@ -47,10 +48,11 @@ if (!is_null($events['events'])) {
 			$response = curl_exec($ch);     
 			curl_close ($ch);	
 			}
+			
 			else if($text == 'On1'){
 				$messages = [
 				'type' => 'text',
-				'text' => 'Plug1 is off'
+				'text' => 'Plug1 is on'
 			];
 			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos01?auth=nbsQSyoKJEf6Zsu:VROlSCXbWzfh2XbSG8OjVNGLg';
 			$ch = curl_init($url1);
