@@ -98,7 +98,7 @@ if (!is_null($events['events'])) {
 			else{
 				$messages = [
 				'type' => 'text',
-				'text' => 'ข้อความไม่ถูกต้อง'
+				'text' => 'ป้อนข้อความไม่ถูกต้อง'
 			];
 			}
 			
