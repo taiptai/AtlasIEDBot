@@ -65,7 +65,7 @@ if (!is_null($events['events'])) {
 			curl_close ($ch);	
 			}
 			
-			else if($text == 'On1'){
+			else if($text == 'ON1'){
 				$messages = [
 				'type' => 'text',
 				'text' => 'Plug1 is on'
@@ -80,7 +80,7 @@ if (!is_null($events['events'])) {
 			$response = curl_exec($ch);     
 			curl_close ($ch);	
 			}
-			else if($text == 'Off1'){
+			else if($text == 'OFF1'){
 				$messages = [
 				'type' => 'text',
 				'text' => 'Plug1 is off'
