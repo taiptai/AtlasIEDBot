@@ -19,7 +19,7 @@ if (!is_null($events['events'])) {
 			if($text == 'เปิดไฟ'){
 			$messages = [
 				'type' => 'text',
-				'text' => 'Test is on'
+				'text' => 'เปิดไฟเรียบร้อยแล้ว'
 			];
 			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
 			$ch = curl_init($url1);
@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
 			else if($text == 'ปิดไฟ'){
 				$messages = [
 				'type' => 'text',
-				'text' => 'Test is off'
+				'text' => 'ปิดไฟเรียบร้อยแล้ว'
 			];
 			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
 			$ch = curl_init($url1);
