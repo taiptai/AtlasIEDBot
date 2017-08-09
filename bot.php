@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			
-			if($text == 'On'){
+			if($text == 'เปิดไฟ'){
 			$messages = [
 				'type' => 'text',
 				'text' => 'Test is on'
@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
 				
 			}
 			
-			else if($text == 'Off'){
+			else if($text == 'ปิดไฟ'){
 				$messages = [
 				'type' => 'text',
 				'text' => 'Test is off'
