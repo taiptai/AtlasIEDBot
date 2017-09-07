@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => 'สวัสดีครับ'
 			];
-			if($text == 'สวัสดี'){
+			else if($text == 'สวัสดี'){
 				$messages = [
 				'type' => 'text',
 				'text' => 'สวัสดีครับ'
