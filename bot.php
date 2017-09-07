@@ -16,89 +16,17 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			
-			if($text == 'เปิดไฟ'){
-			$messages = [
-				'type' => 'text',
-				'text' => 'เปิดไฟเรียบร้อยแล้ว'
-			];
-			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
-			$ch = curl_init($url1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
-			curl_setopt($ch, CURLOPT_POSTFIELDS, "ON1");    
-			$response = curl_exec($ch);     
-			curl_close ($ch);
-				
-			}
-			
-			else if($text == 'ปิดไฟ'){
+			if($text == 'สวัสดี'){
 				$messages = [
 				'type' => 'text',
-				'text' => 'ปิดไฟเรียบร้อยแล้ว'
+				'text' => 'สวัสดีครับ'
 			];
-			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
-			$ch = curl_init($url1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
-			curl_setopt($ch, CURLOPT_POSTFIELDS, "OFF1");    
-			$response = curl_exec($ch);     
-			curl_close ($ch);	
-			}
-			
-			else if($text == 'SW'){
-				$messages = [
-				'type' => 'text',
-				'text' => 'Test is toggled'
-			];
-			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos02?auth=GClHtjv2wbUwh0j:bTQbMklYoD72BlCjyvIGtOUDl';
-			$ch = curl_init($url1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
-			curl_setopt($ch, CURLOPT_POSTFIELDS, "SW1");    
-			$response = curl_exec($ch);     
-			curl_close ($ch);	
-			}
-			
-			else if($text == 'ON1'){
-				$messages = [
-				'type' => 'text',
-				'text' => 'Plug1 is on'
-			];
-			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos01?auth=nbsQSyoKJEf6Zsu:VROlSCXbWzfh2XbSG8OjVNGLg';
-			$ch = curl_init($url1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
-			curl_setopt($ch, CURLOPT_POSTFIELDS, "ON1");    
-			$response = curl_exec($ch);     
-			curl_close ($ch);	
-			}
-			else if($text == 'OFF1'){
-				$messages = [
-				'type' => 'text',
-				'text' => 'Plug1 is off'
-			];
-			$url1 = 'https://api.netpie.io/topic/testPrj/gearname/Wemos01?auth=nbsQSyoKJEf6Zsu:VROlSCXbWzfh2XbSG8OjVNGLg';
-			$ch = curl_init($url1);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);  
-			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);     
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);     
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");    
-			curl_setopt($ch, CURLOPT_POSTFIELDS, "OFF1");    
-			$response = curl_exec($ch);     
-			curl_close ($ch);	
+		
 			}
 			else{
 				$messages = [
 				'type' => 'text',
-				'text' => 'ป้อนข้อความไม่ถูกต้อง'
+				'text' => 'ขออภัย ระบบยังไม่รองรับรูปแบบคำถามของคุณ'
 			];
 			}
 			
