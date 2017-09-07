@@ -16,12 +16,11 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			
-			if($text == 'สวัสดี'){
+			if($text == ('สวัสดี'||'Hi')){
 				$messages = [
 				'type' => 'text',
 				'text' => 'สวัสดีครับ'
 			];
-		
 			}
 			else{
 				$messages = [
