@@ -33,6 +33,19 @@ if (!is_null($events['events'])) {
 				
 			}
 			
+			if($text == 'pm4'){
+			$messages = [
+				'type' => 'text',
+				'text' => '4" FA134 Driver Provides 130 Degree (65 Degree Off-Axis) Coverage in the 2kHz Octave Band
+70.7V Taps @ 1, 2, 4, 8 and 16 Watts Plus 8-ohm Direct Input Via Concealed Terminal Block
+3 Meters of 2mm Cable & Mounting Hardware Included
+Compatible with Standard 3/4" Ceiling Fan Hardware
+Discreet, Attractive Enclosure'
+			];
+
+				
+			}
+			
 			else if($text == 'ปิดไฟ'){
 				$messages = [
 				'type' => 'text',
