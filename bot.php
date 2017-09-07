@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
 				
 			}
 			
-			if($text == 'pm4'){
+			if($text == 'pm4'||'Pm4'||'PM4'){
 			$messages = [
 				'type' => 'text',
 				'text' => '4" FA134 Driver Provides 130 Degree (65 Degree Off-Axis) Coverage in the 2kHz Octave Band
